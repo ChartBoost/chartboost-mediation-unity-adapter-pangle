@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies>
+    <androidPackages>
+        <!-- Android Adapter -->
+        <androidPackage spec="com.chartboost:chartboost-mediation-adapter-pangle:5.6.1.+"/>
+
+        <!-- Pangle Android Repositories -->
+        <repositories>
+          <repository>https://artifact.bytedance.com/repository/pangle</repository>
+        </repositories>
+    </androidPackages>
+    <iosPods>
+        <!-- iOS Adapter -->
+        <iosPod name="ChartboostMediationAdapterPangle" version="~> 5.6.0.0.0"/>
+
+        <!-- Partner iOS SDK-->
+        <iosPod name="Ads-Global" version="~> 6.0.0.0" addToAllTargets="false"/>
+    </iosPods>
+</dependencies>
