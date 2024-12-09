@@ -1,10 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file using the standards as defined at [Keep a Changelog](https://keepachangelog.com/en/1.0.0/). This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0).
 
-### Version 5.0.1 *(2024-10-18)*
+### Version 5.0.2 *(2024-10-18)*
 This version of the Pangle Adapter supports the following native SDK dependencies:
-  * Android: `com.chartboost:chartboost-mediation-adapter-pangle:chartboost-mediation-adapter-pangle:5.6.2.+`
-  * iOS: `ChartboostMediationAdapterPangle: ~> 5.6.0.0.0`
+  * Android: `com.chartboost:chartboost-mediation-adapter-pangle:chartboost-mediation-adapter-pangle:5.6.1.+`
+  * iOS: `ChartboostMediationAdapterPangle: ~> 5.6.1.0`
 
 ### Version 5.0.0 *(2024-08-08)*
 
