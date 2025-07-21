@@ -1,6 +1,6 @@
 {
     "name": "com.chartboost.mediation.unity.adapter.pangle",
-    "version": "5.0.7",
+    "version": "5.0.8",
     "displayName": "Chartboost Mediation Adapter - Pangle",
     "description": "The Chartboost Mediation Unity SDK Adapter for Pangle.",
     "unity": "2022.3",
