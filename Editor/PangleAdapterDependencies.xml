@@ -2,7 +2,7 @@
 <dependencies>
     <androidPackages>
         <!-- Android Adapter -->
-        <androidPackage spec="com.chartboost:chartboost-mediation-adapter-pangle:5.6.4.+"/>
+        <androidPackage spec="com.chartboost:chartboost-mediation-adapter-pangle:5.6.5.+"/>
 
         <!-- Pangle Android Repositories -->
         <repositories>
