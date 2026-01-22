@@ -11,9 +11,9 @@
     </androidPackages>
     <iosPods>
         <!-- iOS Adapter -->
-        <iosPod name="ChartboostMediationAdapterPangle" version="~> 5.7.6.0"/>
+        <iosPod name="ChartboostMediationAdapterPangle" version="~> 5.7.7.0"/>
 
         <!-- Partner iOS SDK-->
-        <iosPod name="Ads-Global" version="~> 7.6.0" addToAllTargets="false"/>
+        <iosPod name="Ads-Global" version="~> 7.7.0" addToAllTargets="false"/>
     </iosPods>
 </dependencies>
