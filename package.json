@@ -1,19 +1,27 @@
 {
     "name": "com.chartboost.mediation.unity.adapter.pangle",
-    "version": "5.0.8",
+    "version": "5.1.0",
+    "license": "MIT",
     "displayName": "Chartboost Mediation Adapter - Pangle",
     "description": "The Chartboost Mediation Unity SDK Adapter for Pangle.",
     "unity": "2022.3",
     "documentationUrl": "https://docs.chartboost.com/en/mediation/integrate/unity/get-started/",
-    "changelogUrl": "https://docs.chartboost.com/en/mediation/integrate/unity/changelog/",
+    "changelogUrl": "https://github.com/ChartBoost/chartboost-mediation-unity-adapter-pangle/blob/main/CHANGELOG.md",
     "licensesUrl": "https://docs.chartboost.com/en/legal/",
     "dependencies": {
-        "com.chartboost.mediation" : "5.0.0",
+        "com.chartboost.mediation": "5.0.0",
         "com.chartboost.unity.threading": "1.0.1",
         "com.chartboost.unity.utilities": "1.0.1",
         "com.chartboost.unity.logging": "1.0.0"
     },
-    "keywords": ["Chartboost", "Mediation", "Adapter", "Unity", "Pangle"],
+    "keywords": [
+        "Chartboost",
+        "Mediation",
+        "Adapter",
+        "Unity",
+        "Pangle"
+    ],
+    "homepage": "https://chartboost.com",
     "author": {
         "name": "Chartboost",
         "email": "sales@chartboost.com",
@@ -21,7 +29,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ChartBoost/chartboost-mediation-unity-adapter-pangle.git"
+        "url": "git+https://github.com/ChartBoost/chartboost-mediation-unity-adapter-pangle.git"
     },
     "bugs": {
         "url": "https://github.com/ChartBoost/chartboost-mediation-unity-adapter-pangle/issues",

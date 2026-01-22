@@ -26,8 +26,8 @@ extern "C" {
         [PangleAdapterConfiguration setGDPRConsentOverride:(PAGGDPRConsentType)gdprConsent];
     }
 
-    void _CBMPangleAdapterSetDoNotSellOverride(int doNotSellType)
+    void _CBMPangleAdapterSetPAConsentOverride(int paConsent)
     {
-        [PangleAdapterConfiguration setDoNotSellOverride:(PAGDoNotSellType)doNotSellType];
+        [PangleAdapterConfiguration setPAConsentTypeOverride:(PAGPAConsentType)paConsent];
     }
 }

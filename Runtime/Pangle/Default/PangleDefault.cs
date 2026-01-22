@@ -21,6 +21,9 @@ namespace Chartboost.Mediation.Pangle.Default
         public void SetGDPRConsentOverride(PangleGDPRConsentType gdprConsent)
             => LogController.Log($"{nameof(SetGDPRConsentOverride)} does nothing on {nameof(PangleDefault)}", LogLevel.Info);
 
+        public void SetPAConsentOverride(PanglePAConsentType paConsentType) 
+            => LogController.Log($"{nameof(SetPAConsentOverride)} does nothing on {nameof(PangleDefault)}", LogLevel.Info);
+
         /// <inheritdoc/>
         public void SetDoNotSellOverride(PangleDoNotSellType doNotSellType)
             => LogController.Log($"{nameof(SetDoNotSellOverride)} does nothing on {nameof(PangleDefault)}", LogLevel.Info);

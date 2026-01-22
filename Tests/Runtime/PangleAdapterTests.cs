@@ -1,5 +1,6 @@
 using Chartboost.Logging;
 using Chartboost.Mediation.Pangle;
+using Chartboost.Mediation.Pangle.Common;
 using Chartboost.Tests.Runtime;
 using NUnit.Framework;
 
@@ -23,7 +24,7 @@ namespace Chartboost.Tests
         public void PartnerIdentifier()
             => TestUtilities.TestStringGetter(() => PangleAdapter.PartnerIdentifier);
 
-        
+        [Test]
         public void PartnerDisplayName()
             => TestUtilities.TestStringGetter(() => PangleAdapter.PartnerDisplayName);
 
@@ -39,6 +40,16 @@ namespace Chartboost.Tests
         public void SetGDPRConsentDefault() 
             => PangleAdapter.SetGDPRConsentOverride(PangleGDPRConsentType.PangleGDPRConsentTypeDefault);
 
+        [Test, Order(0)]
+        // ReSharper disable once InconsistentNaming
+        public void SetPAConsentOverrideConsent() 
+            => PangleAdapter.SetPAConsentOverride(PanglePAConsentType.PanglePAConsentTypeConsent);
+
+        [Test, Order(0)]
+        // ReSharper disable once InconsistentNaming
+        public void SetPAConsentOverrideNoConsent() 
+            => PangleAdapter.SetPAConsentOverride(PanglePAConsentType.PanglePAConsentTypeNoConsent);
+        
         [Test, Order(0)]
         public void SetDoNotSellTypeSell() 
             => PangleAdapter.SetDoNotSellOverride(PangleDoNotSellType.PangleGDoNotSellTypeSell);

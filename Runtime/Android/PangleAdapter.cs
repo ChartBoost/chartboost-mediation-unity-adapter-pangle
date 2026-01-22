@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Chartboost.Mediation.Pangle.Android
 {
-    internal partial class PangleAdapter : IPangleAdapter
+    internal sealed class PangleAdapter : IPangleAdapter
     {
         private const string PangleAdapterConfiguration = "com.chartboost.mediation.pangleadapter.PangleAdapterConfiguration";
         private const string FunctionSetGdprConsentOverride = "setGdprConsentOverride";
-        private const string FunctionSetDoNotSellOverride = "setDoNotSellOverride";
         
         [RuntimeInitializeOnLoadMethod]
         private static void RegisterInstance()
@@ -66,10 +65,15 @@ namespace Chartboost.Mediation.Pangle.Android
         }
 
         /// <inheritdoc/>
+        public void SetPAConsentOverride(PanglePAConsentType paConsentType)
+        {
+            // TODO - Implement on Android when native adapter update is complete.
+        }
+
+        /// <inheritdoc/>
         public void SetDoNotSellOverride(PangleDoNotSellType doNotSellType)
         {
-            using var adapterConfiguration = new AndroidJavaObject(PangleAdapterConfiguration);
-            adapterConfiguration.Call(FunctionSetDoNotSellOverride, (int)doNotSellType);
+            // Do nothing on Android, deprecated.
         }
     }
 }
