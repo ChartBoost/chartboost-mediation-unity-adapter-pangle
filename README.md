@@ -12,7 +12,7 @@ In order to add the Chartboost Mediation Unity SDK - Pangle Adapter to your proj
 
 ```json
 "dependencies": {
-    "com.chartboost.mediation.unity.adapter.pangle": "5.1.2",
+    "com.chartboost.mediation.unity.adapter.pangle": "5.1.3",
     ...
 },
 "scopedRegistries": [
