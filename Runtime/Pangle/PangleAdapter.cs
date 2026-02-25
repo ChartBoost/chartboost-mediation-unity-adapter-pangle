@@ -13,7 +13,7 @@ namespace Chartboost.Mediation.Pangle
         /// <summary>
         /// The partner adapter Unity version.
         /// </summary>
-        public const string AdapterUnityVersion = "5.2.0";
+        public const string AdapterUnityVersion = "5.2.1";
         
         /// <inheritdoc cref="IPartnerAdapterConfiguration.AdapterNativeVersion"/>
         public static string AdapterNativeVersion => Instance.AdapterNativeVersion;
@@ -28,6 +28,7 @@ namespace Chartboost.Mediation.Pangle
         public static string PartnerDisplayName => Instance.PartnerDisplayName;
 
         /// <inheritdoc cref="IPangleAdapter.SetGDPRConsentOverride"/>
+        [Obsolete("This method is no longer supported and will be removed in a future release. Use SetPAConsentOverride instead.")]
         public static void SetGDPRConsentOverride(PangleGDPRConsentType gdprConsent) 
             => Instance.SetGDPRConsentOverride(gdprConsent);
         

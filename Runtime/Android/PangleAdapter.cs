@@ -7,7 +7,8 @@ namespace Chartboost.Mediation.Pangle.Android
     internal sealed class PangleAdapter : IPangleAdapter
     {
         private const string PangleAdapterConfiguration = "com.chartboost.mediation.pangleadapter.PangleAdapterConfiguration";
-        private const string FunctionSetGdprConsentOverride = "setGdprConsentOverride";
+        // ReSharper disable once InconsistentNaming
+        private const string FunctionSetPAConsentOverride = "setPAConsentOverride";
         
         [RuntimeInitializeOnLoadMethod]
         private static void RegisterInstance()
@@ -60,14 +61,14 @@ namespace Chartboost.Mediation.Pangle.Android
         /// <inheritdoc/>
         public void SetGDPRConsentOverride(PangleGDPRConsentType gdprConsent)
         {
-            using var adapterConfiguration = new AndroidJavaObject(PangleAdapterConfiguration);
-            adapterConfiguration.Call(FunctionSetGdprConsentOverride, (int)gdprConsent);
+            // Do nothing on Android, deprecated.
         }
 
         /// <inheritdoc/>
         public void SetPAConsentOverride(PanglePAConsentType paConsentType)
         {
-            // TODO - Implement on Android when native adapter update is complete.
+            using var adapterConfiguration = new AndroidJavaObject(PangleAdapterConfiguration);
+            adapterConfiguration.Call(FunctionSetPAConsentOverride, (int)paConsentType);
         }
 
         /// <inheritdoc/>

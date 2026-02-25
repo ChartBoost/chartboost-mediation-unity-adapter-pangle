@@ -21,11 +21,6 @@ extern "C" {
         return toCStringOrNull([PangleAdapterConfiguration partnerDisplayName]);
     }
 
-    void _CBMPangleAdapterSetGDPRConsentOverride(int gdprConsent)
-    {
-        [PangleAdapterConfiguration setGDPRConsentOverride:(PAGGDPRConsentType)gdprConsent];
-    }
-
     void _CBMPangleAdapterSetPAConsentOverride(int paConsent)
     {
         [PangleAdapterConfiguration setPAConsentTypeOverride:(PAGPAConsentType)paConsent];

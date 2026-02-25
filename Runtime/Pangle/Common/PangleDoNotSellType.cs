@@ -1,5 +1,4 @@
 // ReSharper disable once CheckNamespace
-
 using System;
 
 namespace Chartboost.Mediation.Pangle
