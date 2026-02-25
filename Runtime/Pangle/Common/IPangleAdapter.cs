@@ -12,6 +12,7 @@ namespace Chartboost.Mediation.Pangle.Common
         /// Use to manually set the consent status on the Pangle SDK.
         /// This is generally unnecessary as the Mediation SDK will set the consent status automatically based on the latest consent info.
         /// </summary>
+        [Obsolete("This method is no longer supported and will be removed in a future release.")]
         public void SetGDPRConsentOverride(PangleGDPRConsentType gdprConsent);
 
         /// <summary>

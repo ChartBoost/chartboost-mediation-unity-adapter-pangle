@@ -29,7 +29,9 @@ namespace Chartboost.Mediation.Pangle.IOS
         
         /// <inheritdoc/>
         public void SetGDPRConsentOverride(PangleGDPRConsentType gdprConsent)
-            => _CBMPangleAdapterSetGDPRConsentOverride((int)gdprConsent);
+        {
+            // Do nothing on iOS, deprecated.
+        }
 
         /// <inheritdoc/>
         public void SetPAConsentOverride(PanglePAConsentType paConsentType) 
@@ -44,7 +46,6 @@ namespace Chartboost.Mediation.Pangle.IOS
         [DllImport(SharedIOSConstants.DLLImport)] private static extern string _CBMPangleAdapterPartnerSDKVersion();
         [DllImport(SharedIOSConstants.DLLImport)] private static extern string _CBMPangleAdapterPartnerId();
         [DllImport(SharedIOSConstants.DLLImport)] private static extern string _CBMPangleAdapterPartnerDisplayName();
-        [DllImport(SharedIOSConstants.DLLImport)] private static extern void _CBMPangleAdapterSetGDPRConsentOverride(int gdprConsent);
         [DllImport(SharedIOSConstants.DLLImport)] private static extern void _CBMPangleAdapterSetPAConsentOverride(int gdprConsent);
     }
 }
