@@ -1,65 +1,35 @@
-using Chartboost.Logging;
 using Chartboost.Mediation.Pangle;
 using Chartboost.Mediation.Pangle.Common;
-using Chartboost.Tests.Runtime;
+using Chartboost.Testing;
 using NUnit.Framework;
 
 namespace Chartboost.Tests
 {
     internal class PangleAdapterTests
     {
-        [SetUp]
-        public void SetUp()
-            => LogController.LoggingLevel = LogLevel.Debug;
+        private const string Default = "PangleDefault";
 
         [Test]
-        public void AdapterNativeVersion()
-            => TestUtilities.TestStringGetter(() => PangleAdapter.AdapterNativeVersion);
+        public void Identity() => AdapterContract.AssertIdentity("pangle", "Pangle", PangleAdapter.AdapterUnityVersion,
+            PangleAdapter.PartnerIdentifier, PangleAdapter.PartnerDisplayName, PangleAdapter.AdapterNativeVersion, PangleAdapter.PartnerSDKVersion);
 
-        [Test]
-        public void PartnerSDKVersion()
-            => TestUtilities.TestStringGetter(() => PangleAdapter.PartnerSDKVersion);
+        [TestCase(PanglePAConsentType.PanglePAConsentTypeConsent)]
+        [TestCase(PanglePAConsentType.PanglePAConsentTypeNoConsent)]
+        public void SetPAConsentOverrideLogsOnTheDefault(PanglePAConsentType consent)
+            => AdapterContract.AssertDefaultSetterLogs(nameof(PangleAdapter.SetPAConsentOverride), Default, () => PangleAdapter.SetPAConsentOverride(consent));
 
-        [Test]
-        public void PartnerIdentifier()
-            => TestUtilities.TestStringGetter(() => PangleAdapter.PartnerIdentifier);
+#pragma warning disable CS0618 // The obsolete setters still have to work until they're removed.
+        [TestCase(PangleGDPRConsentType.PangleGDPRConsentConsent)]
+        [TestCase(PangleGDPRConsentType.PangleGDPRConsentNoConsent)]
+        [TestCase(PangleGDPRConsentType.PangleGDPRConsentTypeDefault)]
+        public void SetGDPRConsentOverrideLogsOnTheDefault(PangleGDPRConsentType consent)
+            => AdapterContract.AssertDefaultSetterLogs(nameof(PangleAdapter.SetGDPRConsentOverride), Default, () => PangleAdapter.SetGDPRConsentOverride(consent));
 
-        [Test]
-        public void PartnerDisplayName()
-            => TestUtilities.TestStringGetter(() => PangleAdapter.PartnerDisplayName);
-
-        [Test, Order(0)]
-        public void SetGDPRConsentConsent() 
-            => PangleAdapter.SetGDPRConsentOverride(PangleGDPRConsentType.PangleGDPRConsentConsent);
-
-        [Test, Order(1)]
-        public void SetGDPRConsentNoConsent() 
-            => PangleAdapter.SetGDPRConsentOverride(PangleGDPRConsentType.PangleGDPRConsentNoConsent);
-
-        [Test, Order(2)]
-        public void SetGDPRConsentDefault() 
-            => PangleAdapter.SetGDPRConsentOverride(PangleGDPRConsentType.PangleGDPRConsentTypeDefault);
-
-        [Test, Order(0)]
-        // ReSharper disable once InconsistentNaming
-        public void SetPAConsentOverrideConsent() 
-            => PangleAdapter.SetPAConsentOverride(PanglePAConsentType.PanglePAConsentTypeConsent);
-
-        [Test, Order(0)]
-        // ReSharper disable once InconsistentNaming
-        public void SetPAConsentOverrideNoConsent() 
-            => PangleAdapter.SetPAConsentOverride(PanglePAConsentType.PanglePAConsentTypeNoConsent);
-        
-        [Test, Order(0)]
-        public void SetDoNotSellTypeSell() 
-            => PangleAdapter.SetDoNotSellOverride(PangleDoNotSellType.PangleGDoNotSellTypeSell);
-        
-        [Test, Order(1)]
-        public void SetDoNotSellTypeNotSell() 
-            => PangleAdapter.SetDoNotSellOverride(PangleDoNotSellType.PangleDoNotSellTypeNotSell);
-        
-        [Test, Order(2)]
-        public void SetDoNotSellTypeDefault() 
-            => PangleAdapter.SetDoNotSellOverride(PangleDoNotSellType.PangleDoNotSellTypeDefault);
+        [TestCase(PangleDoNotSellType.PangleGDoNotSellTypeSell)]
+        [TestCase(PangleDoNotSellType.PangleDoNotSellTypeNotSell)]
+        [TestCase(PangleDoNotSellType.PangleDoNotSellTypeDefault)]
+        public void SetDoNotSellOverrideLogsOnTheDefault(PangleDoNotSellType doNotSell)
+            => AdapterContract.AssertDefaultSetterLogs(nameof(PangleAdapter.SetDoNotSellOverride), Default, () => PangleAdapter.SetDoNotSellOverride(doNotSell));
+#pragma warning restore CS0618
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "Chartboost.Mediation.Pangle.Tests.Editor",
-    "rootNamespace": "Chartboost.Tests.Editor",
+    "rootNamespace": "Chartboost.Mediation.Pangle.Tests.Editor",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
