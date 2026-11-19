@@ -13,7 +13,7 @@ namespace Chartboost.Mediation.Pangle
         /// <summary>
         /// The partner adapter Unity version.
         /// </summary>
-        public const string AdapterUnityVersion = "5.3.3";
+        public const string AdapterUnityVersion = "5.3.4";
         
         /// <inheritdoc cref="IPartnerAdapterConfiguration.AdapterNativeVersion"/>
         public static string AdapterNativeVersion => Instance.AdapterNativeVersion;
